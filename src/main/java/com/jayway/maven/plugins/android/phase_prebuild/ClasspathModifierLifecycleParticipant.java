@@ -283,6 +283,7 @@ public final class ClasspathModifierLifecycleParticipant extends AbstractMavenLi
         dependency.setVersion( artifact.getVersion() );
         dependency.setScope( Artifact.SCOPE_SYSTEM );
         dependency.setSystemPath( location.getAbsolutePath() );
+        dependency.setOptional( true );
         return dependency;
     }
 }
