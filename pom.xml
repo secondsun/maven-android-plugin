@@ -47,9 +47,9 @@
   </properties>
 
   <scm>
-    <url>http://github.com/simpligility/android-maven-plugin/tree/${scm.branch}</url>
-    <connection>scm:git:git://github.com/simpligility/android-maven-plugin.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/simpligility/android-maven-plugin.git</developerConnection>
+    <url>http://github.com/secondsun/maven-android-plugin/tree/${scm.branch}</url>
+    <connection>scm:git:git://github.com/secondsun/maven-android-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/secondsun/maven-android-plugin.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
