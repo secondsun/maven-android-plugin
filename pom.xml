@@ -47,20 +47,20 @@
   </properties>
 
   <scm>
-    <url>http://github.com/simpligility/android-maven-plugin/tree/${scm.branch}</url>
-    <connection>scm:git:git://github.com/simpligility/android-maven-plugin.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/simpligility/android-maven-plugin.git</developerConnection>
+    <url>http://github.com/secondsun/maven-android-plugin/tree/${scm.branch}</url>
+    <connection>scm:git:git://github.com/secondsun/maven-android-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/secondsun/maven-android-plugin.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>Google Code Issue Tracking</system>
-    <url>https://github.com/simpligility/android-maven-plugin/issues</url>
+    <url>https://github.com/secondsun/maven-android-plugin/issues</url>
   </issueManagement>
 
   <ciManagement>
     <system>Travis</system>
-    <url>https://travis-ci.org/simpligility/android-maven-plugin</url>
+    <url>https://travis-ci.org/secondsun/maven-android-plugin</url>
   </ciManagement>
 
   <distributionManagement>
