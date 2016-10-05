@@ -23,6 +23,8 @@ package com.simpligility.maven.plugins.android.compiler;
 import com.google.api.client.repackaged.com.google.common.base.Strings;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
+import com.simpligility.maven.plugins.android.AndroidSdk;
+import com.simpligility.maven.plugins.android.configuration.Sdk;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
@@ -34,6 +36,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.inject.Inject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.codehaus.plexus.compiler.AbstractCompiler;
@@ -63,6 +66,9 @@ public class JackCompiler extends AbstractCompiler
     
     public static final String JACK_COMPILER_ID = "jack";
     
+    @Inject
+    private AndroidSdk sdk;
+    
     public JackCompiler()
     {
         super( CompilerOutputStyle.ONE_OUTPUT_FILE_FOR_ALL_INPUT_FILES, ".java", ".dex", null );
@@ -71,6 +77,7 @@ public class JackCompiler extends AbstractCompiler
     @Override
     public String[] createCommandLine( CompilerConfiguration cc ) throws CompilerException
     {
+        
         String androidHome = System.getenv( "ANDROID_HOME" );
         
         String jackJarPath = androidHome + "/build-tools/24.0.2/jack.jar";
