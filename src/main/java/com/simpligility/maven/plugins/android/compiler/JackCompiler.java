@@ -54,17 +54,22 @@ public class JackCompiler extends AbstractCompiler
         String androidHome = System.getenv( "ANDROID_HOME" );
         String jackJarPath = androidHome + "/build-tools/24.0.2/jack.jar";
         String androidJarPath = androidHome + "/platforms/android-24/android.jar";
-        String command =
+        StringBuilder commandBuilder = new StringBuilder();
         
-            ( "java -jar " + jackJarPath + " "
-            + " -D jack.java.source.version=" + cc.getSourceVersion()
-            + " --classpath " + androidJarPath
-            + " --output-dex " + cc.getBuildDirectory()
-            + " src/main/java/ target/generated-sources/r/" );
+            commandBuilder.append( "java -jar " + jackJarPath + " " ); 
+            commandBuilder.append(  " -D jack.java.source.version=" + cc.getSourceVersion() + " " ); 
+            commandBuilder.append(  " --classpath " ); 
+            commandBuilder.append( 
+                    org.apache.commons.lang3.StringUtils.join(
+                            cc.getClasspathEntries(), ":" 
+                        )
+                    );
+            commandBuilder.append(  " --output-dex " + cc.getBuildDirectory() + " " ); 
+            commandBuilder.append(  " src/main/java/ target/generated-sources/r/" );
 
-        LOG.debug( String.format( " jack command : %s", command ) );
+        LOG.debug( String.format( " jack command : %s", commandBuilder.toString() ) );
         
-        return trim( command.split( "\\s" ) ) ;
+        return trim( commandBuilder.toString().split( "\\s" ) ) ;
     }
 
     @Override
